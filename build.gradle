@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jsoup:jsoup:latest.release'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:latest.release'
+}
+
+task copyDependencies(type: Copy) {
+    from configurations.runtimeClasspath into 'copyDependencies'
+}
